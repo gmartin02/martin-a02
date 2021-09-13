@@ -20,12 +20,12 @@ import java.util.Scanner;
  */
 
 public class Solution06 {
-    public static Scanner input = new Scanner(System.in);
-    public static int currentAge;
-    public static int retireAge;
-    public static int timeLeft;
-    public static int currentYear = Year.now().getValue();
-    public static int retireYear;
+    private static final Scanner input = new Scanner(System.in);
+    private static int currentAge;
+    private static int retireAge;
+    private static int timeLeft;
+    private static final int CURRENT_YEAR = Year.now().getValue();
+    private static int retireYear;
 
     public static void getCurrentAge() {
         System.out.println("What is your current age?");
@@ -41,7 +41,7 @@ public class Solution06 {
 
     public static void calculations(int retireAge, int currentAge) {
         timeLeft = retireAge - currentAge;
-        retireYear = currentYear + timeLeft;
+        retireYear = CURRENT_YEAR + timeLeft;
     }
 
     public static void main(String[] args) {
@@ -49,7 +49,7 @@ public class Solution06 {
         getRetireAge();
         calculations(retireAge, currentAge);
         System.out.println("You have " + timeLeft + " years left until you can retire.");
-        System.out.println("It's " + currentYear + " so you can retire in " + retireYear + ".");
+        System.out.println("It's " + CURRENT_YEAR + " so you can retire in " + retireYear + ".");
     }
 }
 
