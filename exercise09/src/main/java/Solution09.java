@@ -1,5 +1,21 @@
+/*
+ *  UCF COP3330 Fall 2021 Assignment 2 Solution 09
+ *  Copyright 2021 Gabriel Martin
+ */
+
 import java.util.Scanner;
 
+/*
+ * declare width, length, area and gallonsPaint variables
+ * store the conversion factor as a final variable
+ * create a scanner for input
+ * ask the user for width and height of the ceiling
+ * store length and width in strings input1 and input2 respectively
+ * change input1 and input2 into integers
+ * area = length * width
+ * gallonsPaint = area/conversionFactor
+ * print the output
+ */
 public class Solution09 {
     private static final Scanner input = new Scanner(System.in);
     private static final int CONVERSION_FACTOR = 350;
