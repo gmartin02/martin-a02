@@ -16,14 +16,15 @@ import java.util.Scanner;
  */
 public class Solution11 {
     private static final Scanner input = new Scanner(System.in);
-    private static float usDollars;
+    private float usDollars;
     private static float euros;
     private static float rate;
 
     public static void main(String[] args) {
+        Solution11 solution = new Solution11();
         userInput();
-        conversion();
-        printOutput();
+        solution.usDollars = solution.conversion();
+        printOutput(solution.usDollars);
 
     }
 
@@ -38,11 +39,12 @@ public class Solution11 {
 
     }
 
-    private static void conversion() {
+    private float conversion() {
         usDollars = euros * rate;
+        return usDollars;
     }
 
-    private static void printOutput() {
+    private static void printOutput(float usDollars) {
         System.out.printf("%.2f at an exchange rate of %f is%n%.2f U.S. dollars.", euros, rate, usDollars);
     }
 

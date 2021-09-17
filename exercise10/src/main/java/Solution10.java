@@ -22,17 +22,22 @@ import java.util.Scanner;
 public class Solution10 {
     private static final Scanner input = new Scanner(System.in);
     private static double subtotal = 0.00;
-    private static double tax;
+    private double tax;
+    private double totalPrice;
     private static final double TAX_RATE = 0.055;
 
 
     public static void main(String[] args) {
+        Solution10 solution = new Solution10();
         userInput();
         System.out.printf("Subtotal: $%.2f", subtotal);
 
-        taxCalculation(subtotal);
+        solution.tax = solution.taxCalculation(subtotal);
+        System.out.printf("%nTax: $%.2f", solution.tax);
 
-        getTotalPrice();
+        solution.totalPrice = solution.getTotalPrice();
+        System.out.printf("%nTotal: $%.2f", solution.totalPrice);
+
 
     }
 
@@ -54,15 +59,14 @@ public class Solution10 {
         subtotal += (price * quantity);
     }
 
-    public static void taxCalculation(double subtotal){
+    public double taxCalculation(double subtotal){
         tax = subtotal * TAX_RATE;
-        System.out.printf("%nTax: $%.2f", tax);
+        return tax;
 
     }
 
-    public static void getTotalPrice(){
-        double totalPrice = subtotal + tax;
-        System.out.printf("%nTotal: $%.2f", totalPrice);
-
+    public double getTotalPrice(){
+        totalPrice = subtotal + tax;
+        return totalPrice;
     }
 }
