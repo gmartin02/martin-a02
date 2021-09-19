@@ -34,6 +34,8 @@ public class Solution14 {
         }
 
         solution.orderAmount = Math.round(solution.orderAmount*100.0)/100.0;
+        solution.tax = Math.round(solution.tax * 100.0) / 100.0;
+        solution.finalAmount = Math.round(solution.finalAmount * 100.0) / 100.0;
 
         System.out.println(solution.state.equals("WI") ? "The subtotal is $" + solution.orderAmount + "\nThe tax is $"
                 + solution.tax + "\nThe Total is $" + solution.finalAmount: "The total is $" + solution.orderAmount );
