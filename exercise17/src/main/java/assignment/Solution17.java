@@ -11,6 +11,7 @@ import java.util.Scanner;
  *      if the user does not enter 1 or 2 have them enter a valid number after going through the others
  * get how much alcohol was consumed by the user
  * get the time since last drink from the user
+ *      !!!!!if input is anything but an int it will prompt to enter the value again
  * using gender check if it is 1 or 2 to set the correct alcohol ratio distribution
  * bac = (alcohol consumed * 5.14/weight * alcohol ratio distribution) - 0.015 * timeSinceLastDrink
  * if bac >= 0.08
@@ -53,22 +54,46 @@ public class Solution17 {
 
     public int userInputWeight() {
         System.out.println("What is your weight in pounds? ");
-        return input.nextInt();
+
+        if(input.hasNextDouble()){
+            return input.nextInt();
+        } else {
+            input.next();
+        }
+        return userInputWeight();
     }
 
     public int userInputGender() {
         System.out.println("Enter a 1 if you are a male and a 2 if you are a female.");
-        return input.nextInt();
+
+        if(input.hasNextDouble()){
+            return input.nextInt();
+        } else {
+            input.next();
+        }
+        return userInputGender();
     }
 
     public int userInputAlcoholConsumed() {
         System.out.println("How much alcohol did you consume in ounces?");
-        return input.nextInt();
+
+        if(input.hasNextDouble()){
+            return input.nextInt();
+        } else {
+            input.next();
+        }
+        return userInputAlcoholConsumed();
     }
 
     public int userInputTimeSinceLastDrink() {
         System.out.println("How long in hours has it been since your last drink? ");
-        return input.nextInt();
+
+        if(input.hasNextDouble()){
+            return input.nextInt();
+        } else {
+            input.next();
+        }
+        return userInputTimeSinceLastDrink();
     }
 
     public double checkGender(int gender){
